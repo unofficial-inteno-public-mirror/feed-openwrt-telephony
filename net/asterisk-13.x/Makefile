@@ -255,7 +255,9 @@ define Build/Compile
 	$(MAKE) -C "$(PKG_BUILD_DIR)" \
 		include/asterisk/version.h \
 		include/asterisk/buildopts.h defaults.h \
-		makeopts.embed_rules
+		makeopts.embed_rules \
+		CFLAGS="$(HOST_CFLAGS) -I$(STAGING_DIR_HOST)/include/libxml2" \
+		LDFLAGS="$(HOST_LDFLAGS) -lxml2"
 	ASTCFLAGS="$(EXTRA_CFLAGS) -DLOW_MEMORY"
 	ASTLDFLAGS="$(EXTRA_LDFLAGS)"
 	$(MAKE) -C "$(PKG_BUILD_DIR)" \
