@@ -12,10 +12,12 @@ PKG_NAME:=asterisk13
 PKG_VERSION:=13.6.0
 PKG_RELEASE:=1
 
-PKG_SOURCE:=asterisk-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://downloads.asterisk.org/pub/telephony/asterisk/releases/
-PKG_MD5SUM:=66355aec4336c068f25e7df739786e72
+PKG_SOURCE_VERSION:=cab462d60c62c83a01829fa139781b80842c4430
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=http://public.inteno.se:/asterisk-13.x
 
+PKG_SOURCE:=asterisk-$(PKG_VERSION).tar.gz
+PKG_SOURCE_SUBDIR:=asterisk-$(PKG_VERSION)
 PKG_BUILD_DIR=$(BUILD_DIR)/asterisk-$(PKG_VERSION)
 PKG_BUILD_DEPENDS:=libxml2/host
 
